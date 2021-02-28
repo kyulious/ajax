@@ -9,9 +9,19 @@
 <body>
     <h1>AJAX</h1>
     <ol>
-        <li>1.정의</li>
-        <li>2.사용법</li>
-        <li>3.예제</li>
+        <li><a onclick="fetchPage('meaning')">정의</a></li>
+        <li><a onclick="fetchPage('use')">사용법</a></li>
+        <li><a onclick="fetchPage('ex')">예제</a></li>
     </ol>
+    <article></article>
+    <script>
+        function fetchPage(name){
+            fetch(name).then(function(response){
+                response.text().then(function(text){
+                    document.querySelector('artice').innerHTML = text;
+                })
+            });
+        }
+    </script>
 </body>
 </html>

@@ -1,0 +1,19 @@
+<Object를 JSON으로 변환하기>
+
+//Object to JSON
+const rabbit = {
+    name: 'tori',
+    color: 'white',
+    size: null,
+    birthDate: new Date(),
+    jump: () => {
+        console.log(`${name} can jump!`);
+    },
+};
+
+json= JSON.stringify(rabbit);
+console.log(json);
+ 
+
+결과값: {"name":"tori","color":"white","size":json.null,"birthDate":"2021-02-18T13:20:22/670Z"}
+-> birthDate는 string으로 변환되어 JSON으로 만들어짐. jump 함수는 JSON에 포함X(함수는 Object의 데이터가 아니라서 제외됨) 
