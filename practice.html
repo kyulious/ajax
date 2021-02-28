@@ -9,10 +9,7 @@
 </head>
 <body>
     <h1>AJAX</h1>
-    <ol>
-        <li><a onclick="fetchPage('meaning')">정의</a></li>
-        <li><a onclick="fetchPage('use')">사용법</a></li>
-        <li><a onclick="fetchPage('ex')">예제</a></li>
+    <ol id="nav">
     </ol>
     <article></article>
     <script>
@@ -23,6 +20,11 @@
                 })
             });
         }
+        fetch('list').then(function(response){
+            response.text().then(function(text){
+                document.querySelector('#nav').innerHTML = text;
+            })
+        })
     </script>
 </body>
 </html>
